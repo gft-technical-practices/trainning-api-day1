@@ -56,7 +56,7 @@ choco install postman --acceptlicense -y
 - [Postman Chrome Plugin](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
 ***
-## Exercício de Modelagem:
+## Exercício de Modelagem - Parte 1 Swagger:
 
 ## Mas antes de tudo, o que exatamente é o Swagger?
 
@@ -96,7 +96,7 @@ info:
 Em host, inserimos o endereço do servidor da API, em basePath colocamos o contexto da aplicação e em schemes informamos se a aplicação aceita HTTP e/ou HTTPS.
 ```
 host: localhost:8080
-basePath: /fj36-PagueRapido/v1
+basePath: /pague-rapido/v1
 schemes:
   - http
   - https
@@ -146,7 +146,7 @@ No nosso caso, o modelo de dados com os objetos Transacao e Pagamento ficaria al
 
 ```
 definitions:
-  Transacao:
+  transacao:
     type: object
     properties:
       codigo:
@@ -159,7 +159,7 @@ definitions:
       valor:
         type: number
         format: double
-  Pagamento:
+  pagamento:
     type: object
     properties:
       id:
@@ -211,7 +211,7 @@ paths:
           name: transacao
           required: true
           schema:
-            $ref: '#/definitions/Transacao'
+            $ref: '#/definitions/transacao'
 ```
 Já para a URI /pagamentos/{id}, é definido um path parameter com o id do pagamento. Esse parâmetro pode ser descrito na seção parameters, logo acima da seção paths, e depois referenciado nos métodos.
 ```
@@ -257,7 +257,7 @@ paths:
         '201':
           description: Novo pagamento criado
           schema:
-            $ref: '#/definitions/Pagamento'
+            $ref: '#/definitions/pagamento'
           headers:
             Location:
               description: uri do novo pagamento
@@ -283,6 +283,23 @@ Após a confirmação de um pagamento, é simplesmente retornado o status 200 (O
           description: 'Pagamento cancelado'
 ```
 
+## Exercício de Modelagem - Parte 2 RAML:
+
+## Mas antes de tudo, o que exatamente é o RAML?
+RAML é uma linguagem para a definição de APIs baseadas em HTTP que incorpora a maioria ou todos os princípios de Representational State Transfer (REST).
+A especificação RAML fornece mecanismos para definir APIs praticamente RESTful, criando código-fonte cliente / servidor e documentando detalhadamente as APIs para usuários.
+
+Segue uma ferramenta de edição de contratos RAML
+	- [Atom](https://atom.io)
+	- [Extensão: Api-Workbench](https://atom.io/packages/api-workbench)
+
+## Escrevendo o Contrato
+Construa um contrato RAML que seja equivalente ao desenvolvido na etapa anterior com swagger.
+
+Para maiores informações sobre a sintaxe do RAML.
+	- [RAML Spec](https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md)
+	- [RAML APIs Examples](https://github.com/raml-apis)
+	
 ## Concluindo
 
 A abordagem utilizada nesse post foi a conhecida como Contract-First ou API-First Development.
