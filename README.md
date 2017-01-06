@@ -289,16 +289,18 @@ Após a confirmação de um pagamento, é simplesmente retornado o status 200 (O
 RAML é uma linguagem para a definição de APIs baseadas em HTTP que incorpora a maioria ou todos os princípios de Representational State Transfer (REST).
 A especificação RAML fornece mecanismos para definir APIs praticamente RESTful, criando código-fonte cliente / servidor e documentando detalhadamente as APIs para usuários.
 
-Segue uma ferramenta de edição de contratos RAML
-	- [Atom](https://atom.io)
-	- [Extensão: Api-Workbench](https://atom.io/packages/api-workbench)
+Segue uma ferramenta de edição de contratos RAML: 
+
+- [Atom](https://atom.io)
+- [Extensão: Api-Workbench](https://atom.io/packages/api-workbench)
 
 ## Escrevendo o Contrato
 Construa um contrato RAML que seja equivalente ao desenvolvido na etapa anterior com swagger.
 
-Para maiores informações sobre a sintaxe do RAML.
-	- [RAML Spec](https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md)
-	- [RAML APIs Examples](https://github.com/raml-apis)
+Para maiores informações sobre a sintaxe do RAML:
+
+- [RAML Spec](https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md)
+- [RAML APIs Examples](https://github.com/raml-apis)
 	
 ## Concluindo
 
