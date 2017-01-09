@@ -1,0 +1,30 @@
+#%RAML 1.0 Trait
+queryParameters:
+  page:
+    description:  Número da página
+    required: false
+    type: integer
+
+responses:
+  206:
+    body:
+      application/json:
+        properties:
+          pagination:
+            properties:
+              page:
+                description:  Número da página
+                required: false
+                type: integer
+              total:
+                description:  Número total de páginas
+                required: false
+                type: integer
+              next:
+                description:  referência da próxima página
+                required: false
+                type: string
+              prev:
+                description:  referência da página anterior
+                required: false
+                type: string

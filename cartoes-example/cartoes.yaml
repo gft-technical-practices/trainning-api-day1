@@ -1,0 +1,57 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: Cartões API
+  description: Cartões API
+  version: "1.0.0"
+# the domain of the service
+host: api.gft.com
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /cartoes/v1
+produces:
+  - application/json
+paths:
+  /cartoes:
+    get:
+      summary: Product Types
+      description: |
+        The Products endpoint returns information about the *Uber* products
+        offered at a given location. The response includes the display name
+        and other details about each product, and lists the products in the
+        proper display order.
+      parameters:
+        - name: nome_impresso
+          in: query
+          description: Filtro com base no nome impresso no cartão
+          required: false
+          type: string
+      tags:
+        - Cartoes
+      responses:
+        200:
+          description: An array of products
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/cartao'
+
+
+definitions:
+  cartao:
+    type: object
+    properties:
+      id:
+        type: string
+      nome_impresso:
+        type: string
+      codigo_seguranca:
+        description: Código de segurança do cartão
+        type: string
+      data_validade:
+        description: Data de validade
+        type: string

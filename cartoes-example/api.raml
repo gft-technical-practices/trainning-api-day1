@@ -1,0 +1,60 @@
+#%RAML 1.0
+title: Cartões API
+version: v1
+baseUri: http://api.gft.com/cartoes/{version}
+protocols:
+  - HTTP
+  - HTTPS
+types:
+  cartao: !include ./types/cartao.raml
+
+traits:
+  paginado: !include ./traits/paginado.raml
+
+/cartoes:
+  description: Representa a coleção de cartões
+  get:
+    is: [paginado]
+    description: Obtêm os cartões
+    queryParameters:
+      nome_impresso:
+        description: Filtro com base no nome impresso no cartão
+        type: string
+        required: false
+        example: Rafael
+      from_data_validade:
+        description: Filtar com a data de validade a partir
+        type: date-only
+        required: false
+      to_data_validade:
+        description: Filtar com a data de validade até
+        type: date-only
+        required: false
+    responses:
+      206:
+        body:
+          application/json:
+            properties:
+              data: cartao[]
+  /{id_cartao}:
+    uriParameters:
+      id_cartao:
+        description: Identificador do cartão
+        type: number
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              properties:
+                data: cartao
+              example: |
+                {
+                  "data":
+                  {
+                    "id": 1232,
+                    "nome_impresso": "Rafael Manzoni",
+                    "codigo_seguranca": "123",
+                    "data_validade": "2023-10-10"
+                  }
+                }
