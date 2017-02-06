@@ -301,6 +301,7 @@ Para maiores informações sobre a sintaxe do RAML:
 
 - [RAML Spec](https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md)
 - [RAML APIs Examples](https://github.com/raml-apis)
+- [Designing a True REST State Machine](http://nordicapis.com/designing-a-true-rest-state-machine/)
 	
 ## Concluindo
 
