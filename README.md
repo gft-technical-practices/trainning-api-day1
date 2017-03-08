@@ -39,12 +39,6 @@ choco install postman --acceptlicense -y
 ***
 ```
 
-## Instalando sua Aplicação:
-
-- Clonar o repositório: `git clone git@github.com:gft-technical-practices/trainning-api-day1`
-- Instalar dependencias: `npm install`
-- Iniciar aplicação: `node server.js`
-
 ## Editor para criar suas APIs:
 
 - [Atom](https://atom.io)
