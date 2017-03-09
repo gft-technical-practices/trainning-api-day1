@@ -110,7 +110,7 @@ Na nossa API, recebemos dados de uma Transação, que tem um código, titular, d
 | ------------- |:-------------:
 | numero		| string
 | titular	    | string
-| valor			| date
+| data			| date
 | valor			| decimal
 
 
